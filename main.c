@@ -22,7 +22,7 @@ int main(int argc, char** argv){
     int world_size;
     MPI_Comm_size(MPI_COMM_WORLD, &world_size);
 
-    //Get the rank of the proces
+    //Get the rank of the process
     int world_rank;
     MPI_Comm_rank(MPI_COMM_WORLD, &world_rank);
 
@@ -43,7 +43,6 @@ int main(int argc, char** argv){
 
     //While every process isn't in this step, all of them will wait till every process is here (blocked by a "barrier")
     MPI_Barrier(MPI_COMM_WORLD);
-
 
     printf("Finalizing process %d out of %d processors\n", world_rank, world_size);
 
